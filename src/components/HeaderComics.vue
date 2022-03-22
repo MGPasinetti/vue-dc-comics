@@ -64,12 +64,42 @@ export default {
 </script>
 
 <style scoped lang="scss">
-li {
-    display: inline-block;
-    a {
-        display: inline-block;
-        text-decoration: none;
-        color: black;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    height: 100px;
+    font-weight: 600;
+
+    img {
+        width: 70px;
+    }
+
+    nav {
+        flex: 0 1 60%;
+        height: 100%;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+
+            li {
+                display: inline-block;
+                height: 100%;
+
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    color: black;
+                    text-transform: uppercase;
+                    line-height: 100px;
+                    vertical-align: middle;
+                    color: #616161;
+                }
+            }
+        }
     }
 }
 </style>
