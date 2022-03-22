@@ -3,7 +3,7 @@
         <section class="dc-buy">
             <div class="container">
                 <ul>
-                    <li v-for="link in links" :key="link">
+                    <li v-for="link in dcBuyLinks" :key="link">
                         <a :href="link.href">
                             <img :src="link.src" :alt="link.text">
                             {{link.text}}
@@ -14,7 +14,16 @@
         </section>
 
         <section class="nav-footer">
-            <div class="container"></div>
+            <div class="container">
+                <ul v-for="navLink in navLinks" :key="navLink">
+                    <li>
+                        <h3>{{navLink.title}}</h3>
+                    </li>
+                    <li v-for="ulLink in navLinks.ulLinks" :key="ulLink">
+                        <a :href="ulLink.href">{{ulLink.text}}</a>
+                    </li>
+                </ul>
+            </div>
         </section>
 
         <section class="socials">
@@ -28,7 +37,7 @@ export default {
     name: `FooterComics`,
     data () {
         return {
-            links: [
+            dcBuyLinks: [
                 {
                     href: `#`,
                     src: require(`../assets/img/buy-comics-digital-comics.png`),
@@ -54,7 +63,133 @@ export default {
                     src: require(`../assets/img/buy-dc-power-visa.svg`),
                     text: `dc power visa`,
                 }
-            ]
+            ],
+            navLinks: [
+                {
+                    title: `DC COMICS`,
+                    ulLinks: [
+                        {
+                            href: `#`,
+                            text: `Characters`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Comics`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Movies`,
+                        },
+                        {
+                            href: `#`,
+                            text: `TV`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Games`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Videos`,
+                        },
+                        {
+                            href: `#`,
+                            text: `News`,
+                        },
+                    ]
+                    
+                },
+                {
+                    title: `SHOP`,
+                    ulLinks: [
+                        {
+                            href: `#`,
+                            text: `Shop DC`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Shop DC Collectibles`,
+                        }
+                    ]
+                    
+                },
+                {
+                    title: `DC`,
+                    ulLinks: [
+                        {
+                            href: `#`,
+                            text: `Terms Of Use`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Privecy policy (New)`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Ad Choices`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Advertising`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Jobs`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Subscriptions`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Talent Workshops`,
+                        },
+                        {
+                            href: `#`,
+                            text: `CPSC Certificates`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Ratings`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Shop Help`,
+                        },
+                        {
+                            href: `#`,
+                            text: `Contact Us`,
+                        }
+                    ]
+                    
+                },
+                {
+                    title: `SITES`,
+                    ulLinks: [
+                        {
+                            href: `#`,
+                            text: `DC`,
+                        },
+                        {
+                            href: `#`,
+                            text: `MAD Magazine`,
+                        },
+                        {
+                            href: `#`,
+                            text: `DC Kids`,
+                        },
+                        {
+                            href: `#`,
+                            text: `DC Universe`,
+                        },
+                        {
+                            href: `#`,
+                            text: `DC Power Visa`,
+                        },
+                    ]
+                    
+                }
+            ],
         }
     }, 
 }
@@ -95,6 +230,11 @@ footer {
                 }
             }
         }
+    }
+
+    .nav-footer {
+        height: 400px;
+        background-image: url(../assets/img/footer-bg.jpg);
     }
 }
 </style>
