@@ -4,7 +4,9 @@
         <img src="../assets/img/dc-logo.png" alt="">
         <nav>
             <ul>
-                <li v-for="(link, index) in links" :key="index"><a :href="link.href">{{link.text}}</a></li>
+                <li v-for="(link, index) in links" :key="index" @click="setActiveIndex(index)" :class="{active: index == activeIndex }">
+                    <a :href="link.href">{{link.text}}</a>
+                </li>
             </ul>
         </nav>
       </div>
@@ -16,6 +18,7 @@ export default {
     name: `HeaderComics`,
     data () {
         return {
+            activeIndex: 0,
             links: [
                 {
                     href: `#`,
@@ -60,43 +63,58 @@ export default {
             ],
         }
     },
+    methods: {
+        setActiveIndex (index) {
+            this.activeIndex = index;
+        },
+    }
 }
 </script>
 
 <style scoped lang="scss">
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@import "../assets/styles/partials/variables.scss";
+
+header {
     background-color: white;
-    height: 100px;
-    font-weight: 600;
 
-    img {
-        width: 70px;
-    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        height: 100px;
+        font-weight: 600;
 
-    nav {
-        flex: 0 1 60%;
-        height: 100%;
+        img {
+            width: 70px;
+        }
 
-        ul {
-            display: flex;
-            justify-content: space-between;
+        nav {
+            flex: 0 1 60%;
             height: 100%;
 
-            li {
-                display: inline-block;
+            ul {
+                display: flex;
+                justify-content: space-between;
                 height: 100%;
 
-                a {
+                li {
                     display: inline-block;
-                    text-decoration: none;
-                    color: black;
-                    text-transform: uppercase;
-                    line-height: 100px;
-                    vertical-align: middle;
-                    color: #616161;
+                    height: 100%;
+                    a {
+                        display: inline-block;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        line-height: 100px;
+                        vertical-align: middle;
+                        color: #616161;
+                    }
+                    &.active a {
+                        color: $blue_color;
+                    }
+                    &.active {
+                        border-bottom: 4px solid $blue_color;
+                    }
                 }
             }
         }
