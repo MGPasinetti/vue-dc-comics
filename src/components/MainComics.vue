@@ -108,17 +108,13 @@ main {
     background-color: black;
 
     img {
-        width: 100%;
-        height: 430px;
-        object-fit: cover;
-        object-position: top;
+        @include img-layout(100%, 430px, cover, top);
     }
 
     .container {
         color: white;
         padding: 4rem 1rem;
-        @include flex-layout(center, stretch, wrap);
-        gap: 1rem;
+        @include flex-layout(space-evenly, stretch, wrap);
     }
 }
 </style>

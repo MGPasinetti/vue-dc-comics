@@ -4,3 +4,10 @@
     align-items: $align;
     flex-wrap: $wrap;
 }
+
+@mixin img-layout($width, $heigth, $object-fit, $object-position) {
+    width: $width;
+    height: $heigth;
+    object-fit: $object-fit;
+    object-position: $object-position;
+}
