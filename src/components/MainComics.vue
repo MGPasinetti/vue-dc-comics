@@ -1,7 +1,7 @@
 <template>
   <main>
+      <img src="../assets/img/jumbotron.jpg" alt="">
       <div class="container">
-          {{msg}}
       </div>
   </main>
 </template>
@@ -11,7 +11,6 @@ export default {
     name: `MainComics`,
     data () {
         return {
-            msg: `--> Content goes here <--`,
         }
     },
 }
@@ -20,6 +19,13 @@ export default {
 <style scoped lang="scss">
 main {
     background-color: black;
+
+    img {
+        width: 100%;
+        height: 430px;
+        object-fit: cover;
+        object-position: top;
+    }
 
     .container {
         height: 120px;
