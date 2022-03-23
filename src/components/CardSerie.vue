@@ -1,7 +1,7 @@
 <template>
   <div class="card-serie">
       <img :src="serieThumb" :alt="serieName">
-      <h2>{{ serieName }}</h2>
+      <h5>{{ serieName.toUpperCase() }}</h5>
   </div>
 </template>
 
@@ -15,6 +15,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+    .card-serie {
+        flex-basis: calc((100% - 5rem) / 6);
+    }
 </style>
