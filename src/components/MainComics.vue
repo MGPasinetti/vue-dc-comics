@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import CardSerie from "./CardSerie.vue"
+
 export default {
     name: `MainComics`,
     data () {
