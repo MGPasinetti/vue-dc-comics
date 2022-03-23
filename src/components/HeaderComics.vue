@@ -5,7 +5,7 @@
         <nav>
             <ul>
                 <li v-for="(link, index) in links" :key="index" @click="setActiveIndex(index)" :class="{active: index == activeIndex }">
-                    <a :href="link.href">{{link.text}}</a>
+                    <a :href="link.href">{{link.text.toUpperCase()}}</a>
                 </li>
             </ul>
         </nav>
@@ -104,7 +104,6 @@ header {
                     a {
                         display: inline-block;
                         text-decoration: none;
-                        text-transform: uppercase;
                         line-height: 100px;
                         vertical-align: middle;
                         color: #616161;

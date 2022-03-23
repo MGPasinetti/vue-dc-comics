@@ -6,7 +6,7 @@
                     <li v-for="link in dcBuyLinks" :key="link">
                         <a :href="link.href">
                             <img :src="link.src" :alt="link.text">
-                            {{link.text}}
+                            {{link.text.toUpperCase()}}
                         </a>
                     </li>
                 </ul>
@@ -216,7 +216,6 @@ footer {
 
                 a {
                     text-decoration: none;
-                    text-transform: uppercase;
                     color: white;
                     line-height: 150px;
                     vertical-align: middle;
